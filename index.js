@@ -1,5 +1,5 @@
-// Import Express framework
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 // Define port
@@ -56,6 +56,9 @@ const data = [
     description: "iPhone 15 Pro Max 256GB description",
   },
 ];
+
+// Use cors middleware to enable CORS for all requests
+app.use(cors());
 
 // Define route to get data
 app.get("/api/product", (req, res) => {
